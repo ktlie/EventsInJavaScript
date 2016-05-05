@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+   <!--        
+        Click Me - 1. On the HTML "button" control, when we move over the element, we want to change the background color 
+                      to red and font color to yellow.
+                   2. On the HTML "button" control, when we move out of the element, we want to change the background color 
+                      to black and font color to white. 
+       DOM object properties - 1. use DOM object properties[onmouseover & onmouseout] to assign event handlers to events.
+                               2. In this case, we actually having the code that we want to execute inside a name function
+                                  [changeColorOnMouseOver or changeColorOnMouseOut] that is a function that has a name.
+                               3. use DOM object properties to assign event handlers[changeColorOnMouseOver
+                                  or changeColorOnMouseOut as an anonymous function] to events.
+                               4. The handler that is assigned last wins. Handler2 is assigned after Handler1.  
+                                  So, Handler2() function overwrites Handler1().
+       HTML attribute - 1. If an event handler is assigned using both an HTML attribute and DOM object property, the handler 
+                           that is assigned using the DOM object property overwrites the one assigned using HTML attribute. 
+       Created on 20/04/2015
+    -->
+    <input type="button" value="Click Me" id="btnClickMe" 
+      />
+    <script type="text/javascript">
+        // The handler that is assigned last wins. Handler2 is assigned after Handler1.  So, Handler2() function
+        // overwrites Handler1().
+        document.getElementById('btnClickMe').onclick = handler1;
+        document.getElementById('btnClickMe').onclick = handler2;
+
+        function handler1() 
+        {
+            alert("Handler 1");
+        }
+
+        function handler2() 
+        {
+            alert("Handler 2");
+        }
+
+        //use DOM object properties to assign event handlers[handler2()]
+//        window.document.getElementById("btnClickMe").onclick = handler2;
+
+//        function handler1() 
+//        {
+//            alert("Handler assigned using HTML attribute");
+//        }
+
+//        function handler2() 
+//        {
+//            alert("Handler assigned using DOM object properties");
+//        }
+        // DOM object properties - 1. use DOM object properties to assign event handlers[changeColorOnMouseOver
+        //                            or changeColorOnMouseOut as an anonymous function] to events.
+//        document.getElementById('btnClickMe').onmouseover = function () {
+//            this.style.background = 'red';
+//            this.style.color = 'yellow'
+//        };
+
+//        document.getElementById('btnClickMe').onmouseout = function () {
+//            this.style.background = 'black';
+//            this.style.color = 'white'
+//        };
+
+        // "this" keyword reference to current element
+        // () is an anonymous function
+//        function () {
+
+//            this.style.background = 'red';
+//            this.style.color = 'yellow'
+//        }
+
+        // "this" keyword reference to current element
+        // () is anonymous function
+//        function () {
+//            this.style.background = 'black';
+//            this.style.color = 'white'
+//        }
+
+        // DOM object properties - 1. use DOM object properties to assign event handlers[changeColorOnMouseOver
+        //                            or changeColorOnMouseOut as a named function] to events.
+//        document.getElementById('btnClickMe').onmouseover = changeColorOnMouseOver;
+//        document.getElementById('btnClickMe').onmouseout = changeColorOnMouseOut;
+
+        // "this" keyword reference to current element
+        // changeColorOnMouseOver() is a named function
+//        function changeColorOnMouseOver() {
+//            
+//            this.style.background = 'red';
+//            this.style.color = 'yellow'
+//        }
+
+        // "this" keyword reference to current element
+        // changeColorOnMouseOut() is a named function
+//        function changeColorOnMouseOut() {
+//            this.style.background = 'black';
+//            this.style.color = 'white'
+//        }
+    </script>
+</body>
+</html>

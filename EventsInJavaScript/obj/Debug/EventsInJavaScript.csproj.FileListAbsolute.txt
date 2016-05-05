@@ -1,0 +1,8 @@
+Z:\ASPNet\ASP.NET MVC 4.0\Self_Project\PragimTechnologies\JavaScript\EventsInJavaScript\EventsInJavaScript\bin\EventsInJavaScript.dll
+Z:\ASPNet\ASP.NET MVC 4.0\Self_Project\PragimTechnologies\JavaScript\EventsInJavaScript\EventsInJavaScript\bin\EventsInJavaScript.pdb
+Z:\ASPNet\ASP.NET MVC 4.0\Self_Project\PragimTechnologies\JavaScript\EventsInJavaScript\EventsInJavaScript\obj\Debug\EventsInJavaScript.dll
+Z:\ASPNet\ASP.NET MVC 4.0\Self_Project\PragimTechnologies\JavaScript\EventsInJavaScript\EventsInJavaScript\obj\Debug\EventsInJavaScript.pdb
+Z:\ASPNet\ASP.NET_MVC_4.0\Self_Project\PragimTechnologies\JavaScript\EventsInJavaScript\EventsInJavaScript\bin\EventsInJavaScript.dll
+Z:\ASPNet\ASP.NET_MVC_4.0\Self_Project\PragimTechnologies\JavaScript\EventsInJavaScript\EventsInJavaScript\bin\EventsInJavaScript.pdb
+Z:\ASPNet\ASP.NET_MVC_4.0\Self_Project\PragimTechnologies\JavaScript\EventsInJavaScript\EventsInJavaScript\obj\Debug\EventsInJavaScript.dll
+Z:\ASPNet\ASP.NET_MVC_4.0\Self_Project\PragimTechnologies\JavaScript\EventsInJavaScript\EventsInJavaScript\obj\Debug\EventsInJavaScript.pdb

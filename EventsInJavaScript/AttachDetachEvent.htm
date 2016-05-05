@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+<!--        
+        attachEvent - 1. is to assign event handler.
+                      2. attachEvent() method works only in IE 8 and earlier versions.
+        cross browser solution - 1. attachEvent() method works only in IE 8 and earlier versions.
+                                 2. addEventListener() method works for IE9 and later also for other major browser
+        Created on 22/04/2015
+    -->
+    <input type="button" value="Click Me" id="btnClickMe" />
+    <script type="text/javascript">
+        // for IE9 and later also for other major browser
+        if (btnClickMe.addEventListener) {
+            btnClickMe.addEventListener("click", ClickHandler);
+        } else {
+            btnClickMe.attachEvent("onclick", ClickHandler);
+        }
+
+        // attachEvent will only works for IE8 and earlier version.
+//        btnClickMe.attachEvent("onclick", ClickHandler);
+
+        function ClickHandler() {
+            alert("Handler 1 called");
+        }
+
+    </script>
+</body>
+</html>

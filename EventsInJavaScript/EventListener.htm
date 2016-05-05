@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+   <!--        
+        addEventListener - 1. is to add an event handler.
+        removeEventListener - 1. What we want to do is to create a button control with value 'Remove Event Handlers'.
+                              2. When we click this button ''Remove Event Handlers', it will remove the event handler 
+                                 that associated with button control 'Click Me'.
+        More than one event handler to an event - 1. you assign more than one event handler method to a given event. 
+                                                  2. In this example, two event handler methods (clickHandler1 & clickHandler2) are 
+                                                     assigned to click event of the button control.
+                                                  3. When you click the button both the handler methods 
+                                                     (clickHandler1 & clickHandler2) are executed.
+        Created on 22/04/2015
+    -->
+    <input type="button" value="Click Me" id="btnClickMe" />
+    <!--<input type="button" value="Remove Event Handlers" onclick="removeHandlers()" />-->
+    <script type="text/javascript">
+        // More than one event handler to an event
+        btnClickMe.addEventListener("click", Handler1);
+        btnClickMe.addEventListener("click", Handler2);
+
+        function Handler1() 
+        {
+            alert("Handler 1 called");
+        }
+
+        function Handler2() 
+        {
+            alert("Handler 2 called");
+        }
+
+        // addEventListener - 1. use DOM addEventListener method to assign event handlers[changeColorOnMouseOver
+        //                       or changeColorOnMouseOut as a named function] to events.
+//        btnClickMe.addEventListener("mouseover", changeColorOnMouseOver);
+//        btnClickMe.addEventListener("mouseout", changeColorOnMouseOut);
+
+        // removeEventListener - 1. When we click this button ''Remove Event Handlers', it will remove the event handler 
+        //                          that associated with button control 'Click Me'.
+//        function removeHandlers() {
+//            btnClickMe.removeEventListener("mouseover", changeColorOnMouseOver);
+//            btnClickMe.removeEventListener("mouseout", changeColorOnMouseOut);
+//        }
+
+        // "this" keyword reference to current element
+        // changeColorOnMouseOver() is a named function
+//        function changeColorOnMouseOver() {
+//                    
+//            this.style.background = 'red';
+//            this.style.color = 'yellow'
+//        }
+
+        // "this" keyword reference to current element
+        // changeColorOnMouseOut() is a named function
+//        function changeColorOnMouseOut() {
+//            this.style.background = 'black';
+//            this.style.color = 'white'
+//        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <style type="text/css">
+        .styleClass
+        {
+            display:table-cell;
+            border:5px solid black;
+            padding:20px;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+<!--        
+        Event bubbling - 1. When the event gets bubbled, the keyword this references the current element to which 
+                            the event is bubbled
+                         2. In the example below, we are using "this" keyword to reference the current DIV element and 
+                            change its border colour.
+                         3. When you click on  the innermost <div> element, all the three <div> elements get changed 
+                            due to event bubbling. 
+        Stop Event bubbling - 1. If you don't want the event to be bubbled up, you can stop it.
+                              2. With Internet Explorer 8 and earlier versions : event.cancelBubble = true.
+                              3. With Internet Explorer 9( and later versions ) & all the other browsers : 
+                                 event.stopPropagation().
+                              4. For IE8  or earlier versions, we are using window.event.
+                              5. IE9 or earlier version and other modern browser, we can just use event object.
+        Created on 24/04/2015
+        -->
+    <div id="DIV1" class="styleClass">DIV1
+        <div id="DIV2" class="styleClass">DIV2
+            <div id="DIV3" class="styleClass">DIV3
+            </div>
+        </div>
+    </div>
+
+<!-- Stop Event bubbling-->
+    <script type="text/javascript">
+        var divElements = document.getElementsByTagName("div");
+
+        for (var i = 0; i < divElements.length; i++) {
+            divElements[i].onclick = function (event) {
+                event = event || window.event;
+
+                if (event.stopPropagation) {
+                    event.stopPropagation();
+                } else {
+                    event.cancelBubble = true;
+                }
+
+                this.style.borderColor = 'red';
+                alert(this.getAttribute('id') + " border colour has changed");
+            }
+        }
+
+    </script>
+<!-- for Event bubbling-->
+<!--    <script type="text/javascript">-->
+        <!--get all div elements-->
+<!--        var divElements = document.getElementsByTagName("div");
+
+        for (var i = 0; i < divElements.length; i++) {
+            divElements[i].onclick = function () {
+                this.style.borderColor = 'red';
+                alert(this.getAttribute('id') + " border colour has changed");
+            }
+        }-->
+    <!--</script>-->
+    <!--        
+        Event bubbling - 1. Event bubbling process starts with the element that triggered the event and then bubbles up 
+                            to the containing elements in the hierarchy.
+                         2. The first concept of Event bubbling.
+                         3. The second concept of Event bubbling. 
+        Created on 23/04/2015
+        -->
+<!--         Second concept of Event bubbling-->
+    <!--<div class="styleClass" onclick="alert('Click event handled by DIV element')">DIV ELEMENT
+            <span class="styleClass" >SPAN ELEMENT
+                <input type="button" value="Click Me" />
+            </span>
+        </div>-->
+    <!-- first concept of event bubbling.-->
+<!--    <div class="styleClass" onclick="alert('DIV clicked')">DIV ELEMENT
+            <span class="styleClass" onclick="alert('SPAN clicked')">SPAN ELEMENT
+                <input type="button" value="Click Me" onclick="alert('Button clicked')" />
+            </span>
+        </div>-->
+</body>
+</html>

@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+   <!--        
+        Event Object - 1. Obtaining the event object is straight-forward.
+                       2. If you have an event handler that associated to an event, when the event occurs
+                          the handler method is automatically called.
+                       3. At that point, the event object is also passed into the event handler method. 
+                       4. is supported by Firefox, Chrome and IE.
+                       5. event.target.type and event.target.tagName property are NOT supported by any browser
+        Cross Browser Solution - 1. IE8 and earlier versions use srcElement property to return the HTML element 
+                                    that raised the event.
+                                 2. IE9 and all other modern browsers use target property. 
+        Created on 23/04/2015
+    -->
+    <input type="button" value="Click Me" id="btnClickMe" onmousemove="getEventDetails(event);" 
+    />
+    <!--<input type="button" value="Click Me" id="btnClickMe" onclick="getEventDetails(event);" onmouseover="getEventDetails(event);" 
+    onmouseout="getEventDetails(event);" />-->
+    <br />
+    <div id="resultDiv"></div>
+    <script type="text/javascript">
+        // Cross Browser Solution
+        function getEventDetails(event) {
+            var sourceElement;
+            if (event.srcElement) 
+            {
+                sourceElement = event.srcElement;
+            }
+            else 
+            {
+                sourceElement = event.target;
+            }
+
+            var eventDetails = "Event Name = " + event.type + "<br/> X = " + event.clientX + "<br/> Y = " + event.clientY
+                                + "<br/> Screen X = " + event.screenX + "<br/> Screen Y = " + event.screenY
+                                + "<br/> Tag Name = " + sourceElement.nodeName + "<br/> Target type = " + sourceElement.type
+            document.getElementById("resultDiv").innerHTML = eventDetails;
+        }
+
+        // for IE9 and all other modern browsers use target property.
+//        function getEventDetails(event) 
+//        {
+//            var eventDetails = "Event Name = " + event.type + "<br/> X = " + event.clientX + "<br/> Y = " + event.clientY
+//                                + "<br/> Screen X = " + event.screenX + "<br/> Screen Y = " + event.screenY
+//                                + "<br/> Tag Name = " + event.target.nodeName + "<br/> Target type = " + event.target.type
+//            document.getElementById("resultDiv").innerHTML = eventDetails;
+//        }
+    </script>
+</body>
+</html>

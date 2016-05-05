@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+<!--    <input type="text" value="10" id="txtTimer"/>
+    <br />
+    <input type="button" value="Start Timer" onclick="startTimer('txtTimer')" />
+    <input type="button" value="Stop Timer" onclick="stopTimer('txtTimer')" />-->
+    <div id="timeDiv"></div>
+    <br />
+<!--    <input type="button" value="Start Clock" onclick="startClock()" />
+    <input type="button" value="Stop Clock" onclick="stopClock()" />-->
+    <script type="text/javascript">
+        /*
+         * Start Timer - 1. It should start counting the number down on the textbox.
+         *               2. The countdown should happen every one second.
+         *               3. When the value reaches ZERO, we want to display "DONE" within the texbox control.
+         *               4. controlID - the id of the textbox control   
+         * Stop Timer - 1. It should stop counting down.
+         * Created on 19/04/2015
+         */
+//        var intervalID;
+//        function startTimer(controlID) {
+//            // control - return the control type[textbox control]
+//            var control = document.getElementById(controlID);
+//            var seconds = control.value;
+
+//            seconds = seconds - 1;
+//            if (seconds == 0) {
+//                control.value = "DONE";
+//                return;
+//            } else {
+//                control.value = seconds;
+//            }
+
+//            intervalID = setTimeout(function () { startTimer("txtTimer") }, 1000);
+//        }
+
+//        function stopTimer() {
+//            clearTimeout(intervalID);
+//        }
+        // Start Timer - 1. It should start counting the number down on the textbox.
+        //               2. The countdown should happen every one second.
+        //               3. When the value reaches ZERO, we want to display down within the texbox control.
+        // Stop Timer - It should stop counting down.
+        /*
+         * clearInterval(intervalID) -  1. cancels the repeated execution of the method that was set up 
+         *                                 using setInterval() method[supported by Firefox, Chrome NOT IE].
+         *                              2. intervalID is the identifier of the repeated action you want to cancel
+         *                              3. This ID is returned from setInterval method.
+         *                              4. Add input button "Start Clock" and "Stop Clock". 
+         * Created on 19/04/2015
+         */
+        //var intervalID;
+        // Start Clock - It should make the time DYNAMIC.
+//        function StartClock() 
+//        {
+//            intervalID = setInterval(getCurrentDateTime, 1000);
+//        }
+
+        // Stop Clock - It should make the time at the page is STATIC.
+//        function StopClock() 
+//        {
+//            clearInterval(intervalID);
+//        }
+
+//        function getCurrentDateTime() {
+//            document.getElementById("timeDiv").innerHTML = new Date();
+//        }
+
+//        getCurrentDateTime();
+        /*
+         * Time Dynamic - 1. Display current date and time. At the moment, the time display dynamically on the page
+         *                   using setInterval() method[supported by Firefox, Chrome NOT IE].
+         *                2. Display current date and time. At the moment, the time display dynamically on the page
+         *                   using setTimeout() method.
+         * Created on 19/04/2015
+         */
+        setInterval(getCurrentDateTime, 1000);
+
+        function getCurrentDateTime() {
+            document.getElementById("timeDiv").innerHTML = new Date();
+        }
+        /*
+         * Time is static - Display current date and time. At the moment, the time is static.
+         * Created on 19/04/2015
+         */
+//        getCurrentDateTime();
+//        function getCurrentDateTime() {
+//            document.getElementById("timeDiv").innerHTML = new Date();
+//        }
+    </script>
+</body>
+</html>
